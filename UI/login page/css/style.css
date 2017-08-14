@@ -12,6 +12,8 @@ body {
 }
 .center-strip .logo-name {
     padding: 16px 30px;
+    background: #fff;
+    border-radius: 19px;
 }
 .logo-name .logo {
     background: url("images/logo.png");

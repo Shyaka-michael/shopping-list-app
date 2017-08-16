@@ -1,24 +1,42 @@
-from..shopping_classes.shopping_list import Shopping_List
+"""
+module for user class
+"""
+from..shopping_classes.shopping_list import ShoppingList
+
 class User():
-    def __init__(self,first_name, last_name, email, password):
+    """
+    user class with the user methods
+    """
+    def __init__(self, first_name, last_name, email, password):
+        """
+        user attributes
+        """
         self.first_name = first_name
         self.last_name = last_name
         self.email = email
         self.password = password
         self.list_of_shopping_list = []
 
-    def create_shoppingList(self, list_name):
-        list_item = Shopping_List(list_name)
+    def create_shopping_list(self, list_name):
+        """
+        function to create shopping list
+        """
+        list_item = ShoppingList(list_name)
         self.list_of_shopping_list.append(list_item)
 
-    def edit_shoppingList(self, old_name, new_name):
+    def edit_shopping_list(self, old_name, new_name):
+        """
+        function to edit a shopping list
+        """
         for obj in self.list_of_shopping_list:
             if old_name == obj.list_name:
                 obj.list_name = new_name
                 return obj
 
-    def delete_shoppinglisst(self, list_name):
+    def delete_shopping_list(self, list_name):
+        """
+        function to delete a shopping list
+        """
         for obj in self.list_of_shopping_list:
             if list_name == obj.list_name:
                 self.list_of_shopping_list.remove(obj)
-

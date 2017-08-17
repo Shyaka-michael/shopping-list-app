@@ -41,3 +41,9 @@ form {
 .register {
     padding: 94px 170px;
 }
+table {
+    width: 100%;
+}
+form.form_shoppinglistname {
+        padding-top: 70px;
+}

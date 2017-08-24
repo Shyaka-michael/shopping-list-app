@@ -1,9 +1,9 @@
 """
 module for user class
 """
-from..shopping_classes.shopping_list import ShoppingList
+from ..shopping_classes.shopping_list import ShoppingList
 
-class User():
+class User:
     """
     user class with the user methods
     """
@@ -17,12 +17,16 @@ class User():
         self.password = password
         self.list_of_shopping_list = []
 
-    def create_shopping_list(self, list_name):
+    def create_shopping_list(self, list_name, id):
         """
         function to create shopping list
         """
-        list_item = ShoppingList(list_name)
-        self.list_of_shopping_list.append(list_item)
+        id = len(self.list_of_shopping_list)
+        list_item = ShoppingList(list_name,id)
+        #print(self.list_of_shopping_list)
+        return self.list_of_shopping_list.append(list_item)
+
+
 
     def edit_shopping_list(self, old_name, new_name):
         """

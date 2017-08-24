@@ -12,6 +12,7 @@ class ShoppingApp():
         """
         self.current_user = None
         self.list_of_users = []
+        self.current_shoppinglist = None
 
     def create_user(self, first_name, last_name, email, password):
         """

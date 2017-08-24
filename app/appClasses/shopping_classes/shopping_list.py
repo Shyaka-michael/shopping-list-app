@@ -8,12 +8,13 @@ class ShoppingList():
     class shopping list
     """
 
-    def __init__(self, list_name):
+    def __init__(self, list_name, id):
         """
         set atributes
         """
         self.list_name = list_name
         self.list_of_items = []
+        self.id =id
 
     def add_item(self, name, quantity):
         """

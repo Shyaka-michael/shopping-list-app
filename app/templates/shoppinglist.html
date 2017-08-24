@@ -7,13 +7,14 @@
                 <tr><td>Shopping List Name</td><td>Edit</td><td>Delete</td></tr>
                 {% if data %}
                     {% for obj in data %}
-                        <tr><td>{{ obj.list_name }}</td><td><a href="#">Edit</a></td><td><a href="#">Delete</a></td></tr>
+                        <tr><td><a href="{{ url_for('shopping_item', shoppingId =loop.index1) }}">{{ obj.list_name }}</a></td><td><a href="#">Edit</a></td><td><a href="#">Delete</a></td></tr>
                     {% endfor %}
                 {% endif %}
             </table>
             <form class="form_shoppinglistname" action="/shoppinglist" method="POST">
-                <input type="text" name="name" placeholder="Enter Your First Name"><br><br>
+                <input type="text" name="name" placeholder="Enter list name"><br><br>
                 <button type="submit">Create Shopping List</button>
             </form>
         </div>
 {% endblock %}
+

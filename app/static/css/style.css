@@ -47,3 +47,8 @@ table {
 form.form_shoppinglistname {
         padding-top: 70px;
 }
+element.style {
+    position: absolute;
+    top: 105px;
+    right: 357px;
+}

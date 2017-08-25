@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mada" rel="stylesheet">
+</head>
+
+<body>
+    <div class="center-strip">
+        <div class="logo-name">
+            <div class="logo">
+
+            </div>
+            <div class="name">
+                Shopping List Application
+            </div>
+        </div>
+        <div class ='content'>
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</body>
+</html>

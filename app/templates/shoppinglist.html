@@ -1,18 +1,28 @@
 {% extends "base.html" %}
-{% block content %}
-        </div>
+{% block content %}+
         <div class ='content'>
             <div class="content-title">Shopping Lists</div>
-            <table>
-                <tr><td>Shopping List Name</td><td>Edit</td><td>Delete</td></tr>
+
+
                 {% if data %}
                     {% for obj in data %}
-                        <tr><td><a href="{{ url_for('shopping_item', shoppingId =loop.index1) }}">{{ obj.list_name }}</a></td><td><a href="#">Edit</a></td><td><a href="#">Delete</a></td></tr>
+                        <form action="viewshopping" method="POST">
+                        <table>
+                        <tr><td>Shopping List Name</td><td>Edit</td><td>Delete</td></tr>
+                        <tr>
+                            <td><a href="{{ url_for('viewshopping', shoppingId=loop.index0) }}">{{ obj.list_name }}</a></td>
+                            <td><a href="#">Edit</a></td>
+                            <td><a href="{{ url_for('deleteshopping', shoppingId=loop.index0) }}">Delete</a></td>
+                        </tr>
+                        </table>
+                        </form>
                     {% endfor %}
+                {% else %}
+                    <h3>Please create a list</h3>
                 {% endif %}
-            </table>
-            <form class="form_shoppinglistname" action="/shoppinglist" method="POST">
-                <input type="text" name="name" placeholder="Enter list name"><br><br>
+
+            <form class="form_shoppinglistname" action="shoppinglist" method="POST">
+                <input type="text" name="name" placeholder="Enter list name" required><br><br>
                 <button type="submit">Create Shopping List</button>
             </form>
         </div>

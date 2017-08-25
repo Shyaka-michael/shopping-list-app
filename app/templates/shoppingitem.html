@@ -3,17 +3,21 @@
         </div>
         <div class ='content'>
             <div class="content-title">Shopping Lists</div>
-            <table>
-                <tr><td>Items</td><td>Quantity</td> <td>edit</td><td>delete</td></tr>
-                {% if itemdata %}
-                    {% for obj in itemdata %}
+
+                {% if data %}
+                    {% for obj in data %}
+                    <table>
+                        <tr><td>Items</td><td>Quantity</td> <td>edit</td><td>delete</td></tr>
                         <tr><td>{{ obj.name }}</td><td> <td>{{ obj.quantity }}</td><td><a href="#">Edit</a></td><td><a href="#">Delete</a></td></tr>
+                    </table>
                     {% endfor %}
+                {% else %}
+                Please make a shopping item
                 {% endif %}
-            </table>
-            <form class="form_shoppinglistname" action="/shoppingitem/{{ id }}" method="POST">
-                    Name<input type="text" name="name" placeholder="Enter item"><br><br>
-                    Quantity<input type="text" name="quantity" placeholder="Enter quantity"><br><br>
+
+            <form class="form_shoppinglistname" action="/shoppingitem/<int:shoppingId>" method="POST">
+                    Name<input type="text" name="name" placeholder="Enter item"required><br><br>
+                    Quantity<input type="text" name="quantity" placeholder="Enter quantity"required><br><br>
                 <button type="submit">add item</button>
             </form>
         </div>

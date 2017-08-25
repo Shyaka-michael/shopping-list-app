@@ -17,16 +17,12 @@ class User:
         self.password = password
         self.list_of_shopping_list = []
 
-    def create_shopping_list(self, list_name, id):
+    def create_shopping_list(self, list_name):
         """
         function to create shopping list
         """
-        id = len(self.list_of_shopping_list)
-        list_item = ShoppingList(list_name,id)
-        #print(self.list_of_shopping_list)
-        return self.list_of_shopping_list.append(list_item)
-
-
+        list_item = ShoppingList(list_name)
+        self.list_of_shopping_list.append(list_item)
 
     def edit_shopping_list(self, old_name, new_name):
         """

@@ -17,8 +17,8 @@ class TestUserTests(unittest.TestCase):
         """
         self.assertEqual(self.test_user_case.first_name, 'john', msg="insert first_name")
         self.assertEqual(self.test_user_case.last_name, 'doe', msg="insert last_name")
-        self.assertEqual(self.test_user_case.email, 'email', msg="insert email")
-        self.assertEqual(self.test_user_case.password, 'password', msg="insert password")
+        self.assertEqual(self.test_user_case.email, 'doe', msg="insert email")
+        self.assertEqual(self.test_user_case.password, 'doe', msg="insert password")
 
     def test_create_shoppinglist(self):
         """
